@@ -1,5 +1,7 @@
 # terratest_guideline
 
+[![Build Status](https://travis-ci.org/foreverXZC/terratest_guideline.svg?branch=master)](https://travis-ci.org/foreverXZC/terratest_guideline)
+
 ## Terratest User Guideline
 
 ### About Terratest
@@ -120,6 +122,10 @@ Now we need to write a file named `.travis.yml` in root. It demonstrates what th
 
 After we guarantee that Travis CI has been installed for specific GitHub repository and environment variables are set correctly, the test will be run automatically once we have changed something in the repo.
 
+### Template
+
+The given template stands for a simple usage of terratest. Although it seems quite basic, it contains almost everything required including terraform files, test case, test code, `Gemfile`, `Rakefile`, `Dockerfile`, `.travis.yml`, etc. We can conveniently run this template after we set up the environment correctly or use docker instead.
+
 ### Example
 
 Azure Terraform Compute Module is an essential module that uses terratest. All files are defined properly which can be easily referred if we would like to introduce terratest to other modules.
@@ -130,18 +136,18 @@ Azure Terraform Compute Module is an essential module that uses terratest. All f
 
 #### Azure
 
-[Azure Portal](https://portal.azure.com/)
+- [Azure Portal](https://portal.azure.com/)
 
-[Azure Cloud Shell](https://shell.azure.com/)
+- [Azure Cloud Shell](https://shell.azure.com/)
 
 #### Terraform
 
-[Terraform Index Page](https://www.terraform.io/)
+- [Terraform Index Page](https://www.terraform.io/)
 
-[Terraform Modules for Azure](https://registry.terraform.io/browse?provider=azurerm)
+- [Terraform Modules for Azure](https://registry.terraform.io/browse?provider=azurerm)
 
-[Terraform Tutorial on Azure](https://docs.microsoft.com/en-us/azure/terraform/)
+- [Terraform Tutorial on Azure](https://docs.microsoft.com/en-us/azure/terraform/)
 
 #### Terratest
 
-[Terratest Source Code & Document](https://github.com/gruntwork-io/terratest/)
+- [Terratest Source Code & Document](https://github.com/gruntwork-io/terratest/)
