@@ -27,11 +27,15 @@ To start, we need to install Terraform and Golang including Dep. Make sure that 
 - [Terraform **(~> 0.11.7)**](https://www.terraform.io/downloads.html)
 - [Golang **(~> 1.10.3)**](https://golang.org/dl/)
 - [Dep **(~> 0.5.0)**](https://github.com/golang/dep)
-- [Configure Terraform for Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure)
 
 #### Provide Terraform Files
 
 First, we have to provide infrastructure code in root. These terraform files should represent which kind of resources we would like to test, including `main.tf`, `variables.tf`, `outputs.tf`, etc.
+
+- [Terraform Index Page](https://www.terraform.io/)
+- [Terraform Modules for Azure](https://registry.terraform.io/browse?provider=azurerm)
+- [Terraform Tutorial on Azure](https://docs.microsoft.com/en-us/azure/terraform/)
+- [Configure Terraform for Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure)
 
 #### Design Test Case
 
@@ -39,7 +43,9 @@ In order to test infrastructure code, we have to provide test cases in `./test/f
 
 #### Write Test Code
 
-One of the most important things we have to do is taking advantage of terratest to write test code. In `./test` folder, we should create a file named `xxx_test.go`. Inside this file, we need to write test code using Golang. With help of terratest, we can create or destroy a resource, or do any kinds of validation we like.
+One of the most important things we have to do is taking advantage of terratest to write test code. In `./test` folder, we should create a file named `xxx_test.go`. Inside this file, we need to write test code using Golang. With help of terratest, we can create or destroy a resource, or do any kinds of validation we like. Terratest provides functions that SSH to a virtual machine or make HTTP requests to a server. To discover more details and features, please refer to Terratest official website.
+
+- [Terratest Source Code & Document](https://github.com/gruntwork-io/terratest/)
 
 #### Use Dep as Package Management
 
@@ -124,30 +130,10 @@ After we guarantee that Travis CI has been installed for specific GitHub reposit
 
 ### Template
 
-The given template stands for a simple usage of terratest. Although it seems quite basic, it contains almost everything required including terraform files, test case, test code, `Gemfile`, `Rakefile`, `Dockerfile`, `.travis.yml`, etc. We can conveniently run this template after we set up the environment correctly or use docker instead.
+The rest files of this guideline is a template which stands for a simple usage of terratest. Although it seems quite basic, it contains almost everything required including terraform files, test case, test code, `Gemfile`, `Rakefile`, `Dockerfile`, `.travis.yml`, etc. We can conveniently run this template after we set up the environment correctly or use docker instead.
 
 ### Example
 
 Azure Terraform Compute Module is an essential module that uses terratest. All files are defined properly which can be easily referred if we would like to introduce terratest to other modules.
 
 - [Azure Terraform Compute Module](https://github.com/Azure/terraform-azurerm-compute)
-
-### Reference
-
-#### Azure
-
-- [Azure Portal](https://portal.azure.com/)
-
-- [Azure Cloud Shell](https://shell.azure.com/)
-
-#### Terraform
-
-- [Terraform Index Page](https://www.terraform.io/)
-
-- [Terraform Modules for Azure](https://registry.terraform.io/browse?provider=azurerm)
-
-- [Terraform Tutorial on Azure](https://docs.microsoft.com/en-us/azure/terraform/)
-
-#### Terratest
-
-- [Terratest Source Code & Document](https://github.com/gruntwork-io/terratest/)
