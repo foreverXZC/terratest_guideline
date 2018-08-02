@@ -97,13 +97,13 @@ We do not need to install anything else if we use docker, which means we can ign
 First build the docker image.
 
 ```sh
-$ docker build --build-arg BUILD_ARM_SUBSCRIPTION_ID=$ARM_SUBSCRIPTION_ID --build-arg BUILD_ARM_CLIENT_ID=$ARM_CLIENT_ID --build-arg BUILD_ARM_CLIENT_SECRET=$ARM_CLIENT_SECRET --build-arg BUILD_ARM_TENANT_ID=$ARM_TENANT_ID -t test .
+$ docker build --build-arg BUILD_ARM_SUBSCRIPTION_ID=$ARM_SUBSCRIPTION_ID --build-arg BUILD_ARM_CLIENT_ID=$ARM_CLIENT_ID --build-arg BUILD_ARM_CLIENT_SECRET=$ARM_CLIENT_SECRET --build-arg BUILD_ARM_TENANT_ID=$ARM_TENANT_ID -t template .
 ```
 
 Then run tests.
 
 ```sh
-$ docker run --rm test /bin/bash -c "bundle install && rake full"
+$ docker run --rm template /bin/bash -c "bundle install && rake full"
 ```
 
 ### Using Travis CI for Continuous Integration
