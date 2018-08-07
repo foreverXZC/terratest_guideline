@@ -18,6 +18,22 @@ When we would like to create new modules or update a new version of an existing 
 
 Kitchen Terraform is also a nice testing tool. It is not only responsible for creating and destroying a resource, but also checking properties in `tfstate` file. By contrast, when we would like to answer whether the infrastructure actually works, terratest is a better choice. We are able to make HTTP request to a server, or SSH to a virtual machine with help of terratest, and thus we can validate if our resources operate properly.
 
+#### Advantages
+
+1. Validation: Users can design how to validate whether the infrastructure code works instead of just checking specific files.
+
+1. Simple file structure: Code organization is quite clear because users only need to design test case and test code.
+
+1. Debug: Terratest is written in Golang, which is a mature compiled language which we can debug more conveniently than Ruby.
+
+1. Lightweight: Users do not need to provide lots of configuration files and the project only depends on Golang.
+
+1. Extension: It is not difficult to extend more functions on top of Terratest, such as Azure specific features.
+
+1. Freedom: Users are able to write any kinds of test code they like, even if they are not related to Terratest itself.
+
+1. Management: Because users know what Terratest is actually doing, it is pretty easy to manage test code.
+
 ### Using Terratest in Simplest Way
 
 #### Set up Environment
@@ -130,7 +146,7 @@ After we guarantee that Travis CI has been installed for specific GitHub reposit
 
 ### Template
 
-The rest files of this guideline is a template which stands for a simple usage of terratest. Although it seems quite basic, it contains almost everything required including terraform files, test case, test code, `Gemfile`, `Rakefile`, `Dockerfile`, `.travis.yml`, etc. We can conveniently run this template after we set up the environment correctly or use docker instead.
+The rest files of this guideline composes a template which stands for a simple usage of terratest. Although it seems quite basic, it contains almost everything required including terraform files, test case, test code, `Gemfile`, `Rakefile`, `Dockerfile`, `.travis.yml`, etc. We can conveniently run this template after we set up the environment correctly or use docker instead.
 
 ### Example
 
