@@ -13,7 +13,7 @@ services:
   - docker
 
 env:
-  - TERRAFORM_VERSION=0.11.7 IMAGE_NAME=azure-mod-example
+  - TERRAFORM_VERSION=0.11.7 IMAGE_NAME=azure-module-template
 
 jobs:
   include:
