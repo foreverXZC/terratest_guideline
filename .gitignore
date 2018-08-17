@@ -26,6 +26,3 @@ vendor/
 
 # Ruby downloaded package lock file.
 Gemfile.lock
-
-# Local test-kitchen files.
-**/.kitchen/*

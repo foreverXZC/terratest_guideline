@@ -148,6 +148,10 @@ After we guarantee that Travis CI has been installed for specific GitHub reposit
 
 The rest files of this guideline composes a template which stands for a simple usage of terratest. Although it seems quite basic, it contains almost everything required including terraform files, test case, test code, `Gemfile`, `Rakefile`, `Dockerfile`, `.travis.yml`, etc. We can conveniently run this template after we set up the environment correctly or use docker instead.
 
+If you would like to use scaffolding tool to generate a terraform module template along with terratest, please refer to npm yeoman generator:
+
+- [Azure Terraform Module Generator](https://www.npmjs.com/package/generator-az-terra-module)
+
 ### Example
 
 Azure Terraform Compute Module is an essential module that uses terratest. All files are defined properly which can be easily referred if we would like to introduce terratest to other modules.
